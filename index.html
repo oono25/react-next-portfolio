@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .work { margin-bottom: 40px; }
+    img { max-width: 300px; display: block; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>My Portfolio</h1>
+  <div id="works">読み込み中...</div>
+
+  <script>
+    const API_KEY = "V18JKB8PnKNEXEWBbIFRT7kdvJWSGMu8119m"; 
+    const SERVICE_DOMAIN = "microcms.io"; 
+
+    async function fetchWorks() {
+      const res = await fetch(`https://${SERVICE_DOMAIN}.microcms.io/api/v1/works`, {
+        headers: { "X-MICROCMS-API-KEY": API_KEY }
+      });
+      const data = await res.json();
+      return data.contents;
+    }
+
+    async function renderWorks() {
+      const works = await fetchWorks();
+      const container = document.getElementById("works");
+      container.innerHTML = "";
+
+      works.forEach(work => {
+        const item = document.createElement("div");
+        item.className = "work";
+        item.innerHTML = `
+          <h2>${work.title}</h2>
+          <img src="${work.image.url}">
+          <p>${work.description}</p>
+          <a href="${work.url}" target="_blank">作品を見る</a>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    renderWorks();
+  </script>
+</body>
+</html>
