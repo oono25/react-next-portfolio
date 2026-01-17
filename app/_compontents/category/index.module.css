@@ -1,0 +1,6 @@
+.tag{
+    background-color: var(--color-bg-ssub);
+    padding: 4px 12px;
+    border-radius: nowrap;
+    font-size: 1rem;
+}

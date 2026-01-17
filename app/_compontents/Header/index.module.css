@@ -1,0 +1,29 @@
+.header {
+    position: absolute;
+    padding: 16px 24px 8px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logoLink {
+    display: flex;
+}
+
+.logo {
+    height: 24px;
+    width: auto;
+}
+
+.item {
+    display: flex;
+    color: #fff;
+    gap: 40px;
+}
+
+@media (max-wdth: 640px) {
+    .header {
+        padding: 24px 16px 8px;
+    }
+}
