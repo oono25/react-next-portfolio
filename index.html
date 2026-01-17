@@ -2,62 +2,70 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>My Spring Portfolio</title>
+  <title>My Portfolio</title>
   <style>
     body {
-      font-family: "Hiragino Sans", sans-serif;
-      background: #f9e3e8; /* 桜色 */
+      font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background: #faf7f8; /* 落ち着いた桜の白 */
       margin: 0;
       padding: 0;
-      color: #444;
+      color: #333;
+      line-height: 1.8;
     }
 
     header {
-      background: #ffffffaa;
-      backdrop-filter: blur(6px);
-      padding: 30px;
+      background: #ffffff;
+      padding: 40px 20px;
       text-align: center;
-      border-bottom: 2px solid #f3c4d3;
+      border-bottom: 1px solid #e5d5da;
     }
 
     h1 {
       margin: 0;
-      font-size: 2.5rem;
-      color: #d36c8f; 
+      font-size: 2.4rem;
+      color: #b86b85; /* 落ち着いた桜色 */
+      letter-spacing: 2px;
+      font-weight: 600;
     }
 
     #works {
       max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
+      margin: 50px auto;
+      padding: 0 20px;
     }
 
     .work {
-      background: #ffffffcc;
-      backdrop-filter: blur(4px);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-      border-left: 8px solid #f3c4d3;
-      transition: transform 0.2s ease;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 35px;
+      border: 1px solid #e8dce1;
+      transition: box-shadow 0.2s ease;
     }
 
     .work:hover {
-      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #8a4f63;
+      font-size: 1.6rem;
+      font-weight: 600;
     }
 
     img {
       max-width: 100%;
       border-radius: 8px;
-      margin-top: 10px;
+      margin: 15px 0;
     }
 
     a {
       display: inline-block;
       margin-top: 10px;
-      color: #6aa66a; 
+      color: #6a8f7a; /* 大人の若葉色 */
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     a:hover {
@@ -67,14 +75,14 @@
 </head>
 <body>
   <header>
-    <h1>🌸 My Spring Portfolio 🌸</h1>
+    <h1>My Spring Portfolio</h1>
   </header>
 
   <div id="works">読み込み中...</div>
 
   <script>
-    const API_KEY = "V18JKB8PnKNEXEWBbIFRT7kdvJWSGMu8119m"; // あなたのAPIキー
-    const SERVICE_DOMAIN = "https://zovqwa5usl.microcms.io/apis/blogs"
+    const API_KEY = "V18JKB8PnKNEXEWBbIFRT7kdvJWSGMu8119m";
+    const SERVICE_DOMAIN = "zovqwa5usl"; 
 
     async function fetchBlogs() {
       const res = await fetch(`https://${SERVICE_DOMAIN}.microcms.io/api/v1/blogs`, {
