@@ -2,48 +2,107 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
+  <title>My Spring Portfolio</title>
   <style>
-    body { font-family: sans-serif; padding: 20px; }
-    .work { margin-bottom: 40px; }
-    img { max-width: 300px; display: block; margin-top: 10px; }
+    body {
+      font-family: "Hiragino Sans", sans-serif;
+      background: #f9e3e8; /* 桜色 */
+      margin: 0;
+      padding: 0;
+      color: #444;
+    }
+
+    header {
+      background: #ffffffaa;
+      backdrop-filter: blur(6px);
+      padding: 30px;
+      text-align: center;
+      border-bottom: 2px solid #f3c4d3;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #d36c8f; 
+    }
+
+    #works {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .work {
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-left: 8px solid #f3c4d3;
+      transition: transform 0.2s ease;
+    }
+
+    .work:hover {
+      transform: translateY(-4px);
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #6aa66a; 
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <h1>My Portfolio</h1>
+  <header>
+    <h1>🌸 My Spring Portfolio 🌸</h1>
+  </header>
+
   <div id="works">読み込み中...</div>
 
   <script>
-    const API_KEY = "V18JKB8PnKNEXEWBbIFRT7kdvJWSGMu8119m"; 
-    const SERVICE_DOMAIN =  "https://zovqwa5usl.microcms.io/apis/blogs";
+    const API_KEY = "（ここに新しいAPIキー）";
+    const SERVICE_DOMAIN = "zovqwa5usl"; // あなたのサービスドメイン
 
-    async function fetchWorks() {
-      const res = await fetch(`https://${SERVICE_DOMAIN}.microcms.io/api/v1/works`, {
+    async function fetchBlogs() {
+      const res = await fetch(`https://${SERVICE_DOMAIN}.microcms.io/api/v1/blogs`, {
         headers: { "X-MICROCMS-API-KEY": API_KEY }
       });
       const data = await res.json();
       return data.contents;
     }
 
-    async function renderWorks() {
-      const works = await fetchWorks();
+    async function renderBlogs() {
+      const blogs = await fetchBlogs();
       const container = document.getElementById("works");
       container.innerHTML = "";
 
-      works.forEach(work => {
+      blogs.forEach(blog => {
         const item = document.createElement("div");
         item.className = "work";
         item.innerHTML = `
-          <h2>${work.title}</h2>
-          <img src="${work.image.url}">
-          <p>${work.description}</p>
-          <a href="${work.url}" target="_blank">作品を見る</a>
+          <h2>${blog.title}</h2>
+          <img src="${blog.image?.url || ""}">
+          <p>${blog.body}</p>
+          <a href="${blog.url}" target="_blank">詳しく見る</a>
         `;
         container.appendChild(item);
       });
     }
 
-    renderWorks();
+    renderBlogs();
   </script>
 </body>
 </html>
