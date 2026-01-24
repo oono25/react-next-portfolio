@@ -1,50 +1,55 @@
-# README
+## react-next-portfolio
 
-# react-next-portfolio
+Next.js 14 + TypeScript + microCMS で構築したポートフォリオサイト。藍色ベースの落ち着いた UI に、スキル・ブログ・資格・プロフィール・お問い合わせをまとめています。
 
-Next.js 14とmicroCMSを使用した、モダンで洗練されたポートフォリオサイト。藍色をベースとした落ち着いたデザインで、スキル、ブログ、資格、プロフィール情報を紹介します。
+### 技術スタック
+- Next.js 14 (App Router) / TypeScript / ESLint
+- microCMS (コンテンツ配信)
+- Nodemailer (Gmail 経由のお問い合わせ送信)
+- dayjs, classnames ほか
 
-# 課題の紹介
+### 主な機能
+- ホーム: ヒーローとナビゲーション、モーションを効かせたビジュアル
+- ブログ: microCMS からの一覧・詳細表示、再検証付きフェッチ
+- スキル・資格: CMS に登録したデータを動的表示
+- メンバー / プロフィール: 画像付きプロフィール表示
+- お問い合わせ: Gmail 経由で管理者メールへ送信
 
-## TOP（ホームページ）
+### セットアップ
+1) 依存関係をインストール
+```bash
+npm install
+```
 
-- モダンなランディングページで、プロフィール、スキル、ブログ、資格へのナビゲーション
-- ムービング背景とシマー効果のあるタイトルで視覚的インパクトを実現
-- レスポンシブデザイン対応で、モバイル、タブレット、デスクトップで最適化
+2) 環境変数を `.env.local` に設定
+```env
+MICROCMS_SERVICE_DOMAIN=your-service-id
+MICROCMS_API_KEY=your-api-key
+GMAIL_USER=your-gmail-address
+GMAIL_APP_PASSWORD=your-gmail-app-password
+CONTACT_EMAIL=recipient-address
+```
+- microCMS の各エンドポイント: `members`, `news`, `categories`, `skills`, `profile`, `blogs`, `certifications`
+- `profile` は固定 ID を想定して取得しています。
 
-## 自己紹介のページ（/skills）
+3) 開発サーバー起動
+```bash
+npm run dev
+```
 
-- profile APIから取得した名前、役割、自己紹介を表示
-- アバター画像付きで、視覚的にわかりやすいプロフィール表示
-- グリッドレイアウトでモバイル対応
+### スクリプト
+- `npm run dev` : 開発サーバー
+- `npm run lint` : ESLint チェック
+- `npm run build` : 本番ビルド
+- `npm start` : ビルド済みアプリの起動
+- `npm run deploy` : `out` ディレクトリを GitHub Pages にデプロイ（`next export` で静的出力を用意してから実行してください）
 
-## ブログ一覧ページ（/blogs）
+### ディレクトリ概要
+- `app/` : App Router ベースのページと UI コンポーネント
+- `app/_libs/` : microCMS クライアントやユーティリティ
+- `app/api/contact/` : Nodemailer を使ったお問い合わせ API Route
+- `public/` : 画像や静的アセット
 
-- microCMSから取得したブログ記事の一覧を表示
-- タイトル、説明、公開日を含むカード形式
-- 各記事の詳細ページへのリンク機能
-
-## ブログ詳細ページ
-
-- 各ブログ記事の詳細内容を表示
-- microCMS APIから記事データを取得
-- ページに戻るボタンで簡単にナビゲーション
-
-# 一番見てほしいところ
-
-- **藍色ベースのモダンなデザイン**: 和の雰囲気を取り入れた落ち着いた色合いで、洗練された印象を実現
-- **アニメーション効果**: カードのスライドイン、アイコンのフロート、リップル効果など、モダンなUI/UXを実装
-- **固定ヘッダーとハンバーガーメニュー**: ブラウザ風の見た目に整え、デスクトップ・モバイル両対応のナビゲーション
-
-# 力を入れた点
-
-## 実装面
-
-- **microCMS統合**: API連携でスキル、プロフィール、ブログ、資格情報を動的に取得・表示
-- **Gmail メール送信機能**: お問い合わせフォームからGmailでメール送信を実装
-- **TypeScript**: 型安全性を確保し、開発効率とメンテナンス性を向上
-
-## デザイン面
-
-- **ガラスモーフィズム**: 半透明の背景とブラーエフェクトでモダンな美しさを実現
-- **グラデーション**: 複数層のグラデーションで奥行きと立体感を表現
+### 開発メモ
+- 画像は microCMS のアセットドメイン `images.microcms-assets.io` を許可
+- Gmail を使うため、アプリパスワードを利用してください
