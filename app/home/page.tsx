@@ -14,7 +14,7 @@ export default function HomePage() {
           </p>
           <div className={styles.buttonGroup}>
             <Link href="/skills" className={styles.primaryButton}>
-              できること
+              自己紹介
             </Link>
             <Link href="/blogs" className={styles.secondaryButton}>
               書いた記事
@@ -25,10 +25,10 @@ export default function HomePage() {
 
       <section className={styles.features}>
         <div className={styles.featureCard}>
-          <div className={styles.icon}>💻</div>
-          <h3>スキル</h3>
-          <p>最新の技術スタックとプログラミングスキルをご紹介します</p>
-          <Link href="/skills" className={styles.link}>詳しく見る →</Link>
+          <div className={styles.icon}>�</div>
+          <h3>自己紹介</h3>
+          <p>自分のプロフィールと経歴についてご紹介します</p>
+          <Link href="/profile" className={styles.link}>詳しく見る →</Link>
         </div>
         
         <div className={styles.featureCard}>
