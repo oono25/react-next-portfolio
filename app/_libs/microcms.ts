@@ -148,9 +148,18 @@ export const getAllSkillsList = async () => {
   return listData;
 };
 
+export const getSkillDetail = async (contentId: string) => {
+  const skillData = await client.get<Skill>({
+    endpoint: 'skills',
+    contentId,
+  });
+  return skillData;
+};
+
 export const getProfile = async () => {
-  const profileData = await client.getObject<Profile>({
+  const profileData = await client.get<Profile>({
     endpoint: 'profile',
+    contentId: 'k6f3ceqfhxjg',
   });
   return profileData;
 };
