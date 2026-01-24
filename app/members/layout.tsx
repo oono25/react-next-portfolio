@@ -1,6 +1,6 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
-import Sheet from '@/app/_components/Sheet';
-import Hero from '@/app/_components/Hero';
+import Sheet from '@/app/_compontents/sheet';
+import Hero from '@/app/_compontents/Hero';
 
 export const metadata = {
   title: 'メンバー',

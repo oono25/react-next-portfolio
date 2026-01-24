@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './index.module.css';
-import { formatDate } from '@/app/_utils/formatDate';
+import { formatDate } from '@/app/_libs/untils';
 
 type Props = {
   date: string;
