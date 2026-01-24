@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	// Add your Next.js configuration options here
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'images.microcms-assets.io',
+			},
+		],
+	},
 };
 
 export default nextConfig;
