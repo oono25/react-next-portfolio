@@ -1,12 +1,15 @@
 .top{
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgba(0,0,0,0.5);
   color: #fff;
   overflow: hidden;
-  padding: 200px 0;
+  padding: 100px 20px;
+  text-align: center;
+  min-height: auto;
 }
 .main {
   display: flex;
@@ -45,17 +48,15 @@
 }
 
 .bgimg {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 600%;
-  object-fit: cover;
-  object-position: right;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin-top: 30px;
+  border-radius: var(--border-radius);
 }
 
 .news {
@@ -91,7 +92,7 @@
   padding:24px 0;
 }
 
-image{
+.image{
   width: 200px;
   height: auto;
   border-radius: var(--border-radius);
@@ -350,4 +351,214 @@ image{
   to {
     transform: rotate(0deg);
   }
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px;
+}
+
+.skillCard {
+  background: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.skillName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+  color: #333;
+}
+
+.skillBar {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.skillBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  transition: width 0.6s ease;
+}
+
+.skillLevel {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.skillDescription {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0;
+}
+
+.profileSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.profileCard {
+  max-width: 600px;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.profileCard h3 {
+  font-size: 1.8rem;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.profileTitle {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.profileBio {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.profileEmail {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 10px 0 0 0;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.socialLinks a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  background-color: #0056b3;
+}
+
+.blogs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.blogsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 40px;
+}
+
+.blogCard {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blogCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.blogThumbnail {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blogContent {
+  padding: 20px;
+}
+
+.blogDate {
+  font-size: 0.85rem;
+  color: #999;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.blogTitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  color: #333;
+  line-height: 1.4;
+}
+
+.blogDescription {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 15px 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blogTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.blogTag {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-radius: 16px;
+  font-size: 0.8rem;
 }

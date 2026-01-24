@@ -24,6 +24,31 @@ export type News = {
   category: Category;
 } & MicroCMSListContent;
 
+export type Skill = {
+  name: string;
+  proficiency: number;
+  description?: string;
+} & MicroCMSListContent;
+
+export type Profile = {
+  name: string;
+  title: string;
+  bio: string;
+  email?: string;
+  github?: string;
+  linkedin?: string;
+  avatar?: MicroCMSImage;
+};
+
+export type Blog = {
+  title: string;
+  description: string;
+  content: string;
+  thumbnail?: MicroCMSImage;
+  publishedAt: string;
+  tags?: string[];
+} & MicroCMSListContent;
+
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');
 }
@@ -95,6 +120,63 @@ export const getAllNewsList = async () => {
 export const getAllCategoryList = async () => {
   const listData = await client.getAllContents<Category>({
     endpoint: 'categories',
+  });
+
+  return listData;
+};
+
+export const getSkillsList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Skill>({
+    endpoint: 'skills',
+    queries,
+  });
+  return listData;
+};
+
+export const getAllSkillsList = async () => {
+  const listData = await client.getAllContents<Skill>({
+    endpoint: 'skills',
+  });
+
+  return listData;
+};
+
+export const getProfile = async () => {
+  const profileData = await client.getObject<Profile>({
+    endpoint: 'profile',
+  });
+  return profileData;
+};
+
+export const getBlogsList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Blog>({
+    endpoint: 'blogs',
+    queries,
+  });
+  return listData;
+};
+
+export const getBlogDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries
+) => {
+  const detailData = await client.getListDetail<Blog>({
+    endpoint: 'blogs',
+    contentId,
+    queries,
+    customRequestInit: {
+      next: {
+        revalidate: queries?.draftKey === undefined ? 60 : 0,
+      },
+    },
+  });
+
+  return detailData;
+};
+
+export const getAllBlogsList = async () => {
+  const listData = await client.getAllContents<Blog>({
+    endpoint: 'blogs',
   });
 
   return listData;
