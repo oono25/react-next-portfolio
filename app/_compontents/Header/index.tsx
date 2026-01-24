@@ -18,19 +18,13 @@ export default function Header() {
             <nav className={styles.nav}>
                 <ul className={styles.navList}>
                     <li>
-                        <Link href='/'>ホーム</Link>
+                        <Link href='/profile'>profile</Link>
                     </li>
                     <li>
-                        <Link href='/skills'>スキル</Link>
+                        <Link href='/skills'>sukils</Link>
                     </li>
                     <li>
-                        <Link href='/blogs'>ブログ</Link>
-                    </li>
-                    <li>
-                        <Link href='/certifications'>資格</Link>
-                    </li>
-                    <li>
-                        <Link href='/contact'>お問い合わせ</Link>
+                        <Link href='/blogs'>blogs</Link>
                     </li>
                 </ul>
             </nav>

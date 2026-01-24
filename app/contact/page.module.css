@@ -1,0 +1,151 @@
+.wrapper {
+  padding: 120px 24px 80px;
+  background: linear-gradient(135deg, #1a365d 0%, #2d5986 50%, #34548b 100%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.backRow {
+  margin-bottom: 24px;
+}
+
+.backLink {
+  color: #bfdbfe;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.backLink:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.heading {
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.formGroup {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #bfdbfe;
+}
+
+.input,
+.textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #bfdbfe;
+  box-shadow: 0 0 0 3px rgba(191, 219, 254, 0.1);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #bfdbfe 0%, #7dd3fc 100%);
+  color: #1a365d;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(191, 219, 254, 0.3);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.info {
+  margin-top: 32px;
+  padding: 20px;
+  background: rgba(191, 219, 254, 0.1);
+  border-left: 3px solid #bfdbfe;
+  border-radius: 4px;
+}
+
+.infoTitle {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #bfdbfe;
+}
+
+.infoText {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 100px 16px 60px;
+  }
+
+  .form {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

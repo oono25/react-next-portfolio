@@ -1,0 +1,85 @@
+.wrapper {
+  padding: 120px 24px 80px;
+  background: linear-gradient(135deg, #0f172a 0%, #1a365d 50%, #243b55 100%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.backRow {
+  max-width: 960px;
+  margin: 0 auto 16px;
+}
+
+.backLink {
+  color: #bfdbfe;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.backLink:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.heading {
+  max-width: 960px;
+  margin: 0 auto 32px;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  opacity: 0.9;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.issuer {
+  font-weight: 600;
+  color: #bfdbfe;
+  margin-bottom: 6px;
+}
+
+.date {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.desc {
+  color: rgba(255, 255, 255, 0.9);
+}

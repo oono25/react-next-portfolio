@@ -10,7 +10,7 @@ export default function HomePage() {
             こんにちは！👋
           </h1>
           <p className={styles.subtitle}>
-            プロダクトを育てたり、チームで作る体験が大好きです
+            まだ学びの途中ですが、毎日少しずつ手を動かして成長を目指しています
           </p>
           <div className={styles.buttonGroup}>
             <Link href="/skills" className={styles.primaryButton}>

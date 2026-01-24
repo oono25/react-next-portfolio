@@ -49,6 +49,13 @@ export type Blog = {
   tags?: string[];
 } & MicroCMSListContent;
 
+export type Certification = {
+  name: string;
+  issuer: string;
+  issuedDate: string;
+  description?: string;
+} & MicroCMSListContent;
+
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required');
 }
@@ -177,6 +184,22 @@ export const getBlogDetail = async (
 export const getAllBlogsList = async () => {
   const listData = await client.getAllContents<Blog>({
     endpoint: 'blogs',
+  });
+
+  return listData;
+};
+
+export const getCertificationsList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Certification>({
+    endpoint: 'certifications',
+    queries,
+  });
+  return listData;
+};
+
+export const getAllCertificationsList = async () => {
+  const listData = await client.getAllContents<Certification>({
+    endpoint: 'certifications',
   });
 
   return listData;
