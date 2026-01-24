@@ -26,10 +26,14 @@ export type News = {
 
 export type Skill = {
   name: string;
-  proficiency: number;
+  issuer: string;
+  issuedDate: string;
+  expiryDate?: string;
+  credentialId?: string;
   description?: string;
 } & MicroCMSListContent;
 
+// 自己紹介
 export type Profile = {
   name: string;
   title: string;
@@ -132,6 +136,7 @@ export const getAllCategoryList = async () => {
   return listData;
 };
 
+// 資格一覧を取得
 export const getSkillsList = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<Skill>({
     endpoint: 'skills',
@@ -140,6 +145,7 @@ export const getSkillsList = async (queries?: MicroCMSQueries) => {
   return listData;
 };
 
+// 全ての資格を取得
 export const getAllSkillsList = async () => {
   const listData = await client.getAllContents<Skill>({
     endpoint: 'skills',
@@ -148,6 +154,7 @@ export const getAllSkillsList = async () => {
   return listData;
 };
 
+// 資格の詳細を取得
 export const getSkillDetail = async (contentId: string) => {
   const skillData = await client.get<Skill>({
     endpoint: 'skills',
@@ -156,6 +163,7 @@ export const getSkillDetail = async (contentId: string) => {
   return skillData;
 };
 
+// 自己紹介を取得
 export const getProfile = async () => {
   const profileData = await client.get<Profile>({
     endpoint: 'profile',
