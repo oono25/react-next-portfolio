@@ -15,13 +15,13 @@ export default async function SkillsPage() {
       </div>
 
       <div className={styles.grid}>
-        {certifications.map((cert) => (
-          <div key={cert.id} className={styles.card}>
-            <h2 className={styles.cardTitle}>{cert.name}</h2>
-            <div className={styles.issuer}>発行: {cert.issuer}</div>
-            <div className={styles.date}>{new Date(cert.issuedDate).toLocaleDateString('ja-JP')}</div>
-            {cert.description && (
-              <p className={styles.desc}>{cert.description}</p>
+        {certifications.map((skill) => (
+          <div key={skill.id} className={styles.card}>
+            <h2 className={styles.cardTitle}>{skill.category}</h2>
+            <div className={styles.items}>{skill.items}</div>
+            <div className={styles.level}>レベル: {skill.level}</div>
+            {skill.description && (
+              <div className={styles.desc} dangerouslySetInnerHTML={{ __html: skill.description }} />
             )}
           </div>
         ))}

@@ -25,11 +25,9 @@ export type News = {
 } & MicroCMSListContent;
 
 export type Skill = {
-  name: string;
-  issuer: string;
-  issuedDate: string;
-  expiryDate?: string;
-  credentialId?: string;
+  category: string;
+  items: string;
+  level: string;
   description?: string;
 } & MicroCMSListContent;
 
