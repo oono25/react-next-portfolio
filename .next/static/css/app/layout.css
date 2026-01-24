@@ -130,11 +130,9 @@ body {
     sans-serif;
   color: var(--color-text-main);
   line-height: 1.8;
-
-  display: flex;        
-  justify-content: center;
-  align-items: center;    
-  min-height: 100vh;      
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
 }
 
 code {
