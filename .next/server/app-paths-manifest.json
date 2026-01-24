@@ -1,12 +1,12 @@
 {
   "/_not-found": "app/_not-found.js",
-  "/api/contact/route": "app/api/contact/route.js",
   "/contact/page": "app/contact/page.js",
   "/blogs/page": "app/blogs/page.js",
-  "/page": "app/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
   "/home/page": "app/home/page.js",
-  "/profile/page": "app/profile/page.js",
+  "/page": "app/page.js",
   "/skills/page": "app/skills/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/profile/page": "app/profile/page.js",
   "/members/page": "app/members/page.js"
 }
