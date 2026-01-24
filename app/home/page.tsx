@@ -42,7 +42,7 @@ export default function HomePage() {
           <div className={styles.icon}>🏆</div>
           <h3>資格</h3>
           <p>取得した資格や認定情報を掲載しています</p>
-          <Link href="/certifications" className={styles.link}>詳しく見る →</Link>
+          <Link href="/skills" className={styles.link}>詳しく見る →</Link>
         </div>
         
         <div className={styles.featureCard}>
