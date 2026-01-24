@@ -1,8 +1,8 @@
 import styles from './page.module.css';
-import { getCertificationsList } from '@/app/_libs/microcms';
+import { getAllSkillsList } from '@/app/_libs/microcms';
 
 export default async function SkillsPage() {
-  const certifications = await getCertificationsList().then((res) => res.contents).catch(() => []);
+  const certifications = await getAllSkillsList().catch(() => []);
 
   return (
     <div className={styles.wrapper}>
