@@ -2,9 +2,6 @@
 
 # react-next-portfolio
 
-サイトURL: http://localhost:3002
-GitHub: https://github.com/あなたのユーザー名
-
 Next.js 14とmicroCMSを使用した、モダンで洗練されたポートフォリオサイト。藍色をベースとした落ち着いたデザインで、スキル、ブログ、資格、プロフィール情報を紹介します。
 
 # 課題の紹介
