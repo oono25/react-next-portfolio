@@ -1,11 +1,64 @@
 .items {
     display: flex;
+    flex-direction: column;
     color: #fff;
-    gap: 40px;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 60px 0;
+}
+
+.items li {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.items li:nth-child(1) { animation-delay: 0.1s; }
+.items li:nth-child(2) { animation-delay: 0.2s; }
+.items li:nth-child(3) { animation-delay: 0.3s; }
+.items li:nth-child(4) { animation-delay: 0.4s; }
+.items li:nth-child(5) { animation-delay: 0.5s; }
+
+.items a {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.items a:hover {
+    color: #bfdbfe;
+    border-bottom: 2px solid #bfdbfe;
+    transform: translateX(10px);
 }
 
 .button {
     display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: transform 0.3s ease;
+    color: #333;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 640px) {
@@ -20,19 +73,26 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: var(--color-bg-painted);
-        color: var(--color-text-unpainted);
-        padding: 24px 16px;
+        background: linear-gradient(135deg, rgba(26, 54, 93, 0.98) 0%, rgba(45, 89, 134, 0.98) 50%, rgba(52, 84, 139, 0.98) 100%);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        padding: 24px;
+        z-index: 1000;
+        overflow-y: auto;
     }
-.ietm {
-    flex-direction: column;
-    gap: 24px;
-}
 
-    .botton {
+    .button {
         display: flex;
-        background: none;
-        border: none;
-        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        padding: 12px;
     }
 }

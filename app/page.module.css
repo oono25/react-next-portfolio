@@ -4,12 +4,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0,0,0,0.5);
+  background: linear-gradient(135deg, #1a365d 0%, #2d5986 50%, #34548b 100%);
   color: #fff;
   overflow: hidden;
   padding: 100px 20px;
   text-align: center;
   min-height: auto;
+  box-shadow: 0 10px 40px rgba(26, 54, 93, 0.35);
 }
 .main {
   display: flex;
@@ -358,7 +359,8 @@
   flex-direction: column;
   align-items: center;
   padding: 60px 20px;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  min-height: 100vh;
 }
 
 .skillsGrid {
@@ -372,15 +374,15 @@
 
 .skillCard {
   background: white;
-  padding: 20px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skillCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(168, 237, 234, 0.4);
 }
 
 .skillName {
@@ -423,15 +425,24 @@
   flex-direction: column;
   align-items: center;
   padding: 60px 20px;
-  background-color: #fff;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
 }
 
 .profileCard {
   max-width: 600px;
-  padding: 30px;
-  background: #f9f9f9;
-  border-radius: var(--border-radius);
+  padding: 40px;
+  background: #fff;
+  border-radius: 16px;
   text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profileCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(102, 126, 234, 0.2);
 }
 
 .profileCard h3 {
@@ -487,29 +498,30 @@
   flex-direction: column;
   align-items: center;
   padding: 60px 20px;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  min-height: 100vh;
 }
 
 .blogsGrid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   width: 100%;
-  max-width: 600px;
+  max-width: 1200px;
   margin-top: 40px;
 }
 
 .blogCard {
   background: white;
-  border-radius: var(--border-radius);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blogCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(252, 182, 159, 0.4);
 }
 
 .blogThumbnail {
