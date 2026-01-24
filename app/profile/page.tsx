@@ -36,7 +36,7 @@ export default async function ProfilePage() {
         )}
         <div>
           <h1 className={styles.name}>{profile.name}</h1>
-          <div className={styles.role}>{profile.role}</div>
+          <div className={styles.role}>{profile.title}</div>
           <p className={styles.bio}>{profile.bio}</p>
         </div>
       </div>
